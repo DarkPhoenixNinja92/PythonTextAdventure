@@ -1,7 +1,16 @@
 import random
 restart = ''
-inventory = ['knapsack', 'food', 'rope', 'cabin key']
-equipped = []
+inventory = ['knapsack', 'food', 'rope', 'cabin key', 'rusty iron sword']
+openEquipSlots = 4
+equipped = [
+    {
+        'name': inventory[4],
+        'speed': 7,
+        'attack': 1,
+        'equip slot': 'main hand'
+    }
+    ]
+health = 100
 
 def main():
     print('You come to a deep ravine. A rickety ladder leads down into a bottomless chasm below with paths leading off to the south and east and an open field stretches out before an expansive forest.')
