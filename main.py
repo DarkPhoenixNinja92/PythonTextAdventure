@@ -1,6 +1,7 @@
 import random
 restart = ''
-inventory = []
+inventory = ['knapsack', 'food', 'rope', 'cabin key']
+equipped = []
 
 def main():
     print('You come to a deep ravine. A rickety ladder leads down into a bottomless chasm below with paths leading off to the south and east and an open field stretches out before an expansive forest.')
@@ -59,7 +60,24 @@ def main():
         if btnPress == 'tower':
                 print(btnPress)
         elif btnPress == 'cabin':
-                print(btnPress)
+                print('You trapse across the grasslands until you stand upon the threshsold of that cabin.')
+                btnPress = input('Nobody appears to be home. Do you knock on the door or seek another path? (knock, leave) ')
+                cabinDoor = 'locked'
+                if btnPress == 'knock':
+                    print('You pound furiously on the door for several minutes but nobody responds. When you eventually think to try the door, it is locked. It would appear you must search elsewhere for a path forward... Unless you have the key? /n (To enter the cabin, you must have the "cabin key" item in your inventory. Use the "enter" command in this are once in possession of this item to enter the cabin.')
+                btnPress = input('Do you wish to attempt to enter the cabin? (Requires the "cabin key" item to be in your inventory) ')
+                if btnPress == 'yes':
+                    for item in inventory:
+                            if item == 'cabin key':
+                                cabinDoor = 'unlocked'
+                if cabinDoor == 'unlocked':
+                        print('The door slides open with a click and you slip into the cabin.')
+                elif cabinDoor == 'locked':
+                        print('You have no means to enter the cabin. Search for the key and then return!')
+                else:
+                   print('You lack a means to gain entry into the cabin so you must search for help elsewhere.') 
+        elif btnPress == 'leave':
+                    print('You lack a means to gain entry into the cabin so you must search for help elsewhere.')
         elif btnPress == 'rest':
                 restRoll = random.randint(1,25)
                 if restRoll < 10:
