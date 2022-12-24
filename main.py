@@ -92,6 +92,24 @@ def main():
                 if restRoll < 10:
                     print('Your rest passes uneventfully. You awaken the next morning feeling extremely well rested.')
                     btnPress = input('You prepare to set out again. Do you head for the tower or the cabin? (tower, cabin) ')
+                    if btnPress == 'tower':
+                        print('The tower seems your best bet so you begin crossing the landscape towards the imposing structure. Hours later, you arrive at the threshold of the tower.')
+                        print('You have scarcely set foot in front of the tower when the door is flung open and an angry man brandishing a curved sword emerges. He is shouting incoherently in a language you do not recognize \n but you understand he wants you to leave.')
+                        btnPress = input("Do you respect the man's wishes and depart, try to convince him to let you stay or ignore the mad old fool? (respect, convince, ignore) ")
+                        if btnPress == 'respect':
+                            print('You have no desire to cause trouble - less so with an armed lunatic brandishing a sword in your face so you take your leave of him and go back the way you came.')
+                        elif btnPress == 'convince':
+                            print('You calmly speak to the old man, trying your best to express that you mean no harm but he continues to rant and rave at you. Lacking a meanas to communicate properly, it seems you cannot make yourself understood by him.\n Unless you have a way to communicate with him? (requires golden branch')
+                            btnPress = input('Do you have a means to communicate with the old man? ')
+                            if btnPress == 'yes':
+                                for item in inventory:
+                                    hasBranch = ''
+                                    if item == 'golden branch':
+                                        hasBranch = True
+                                if hasBranch == True:
+                                    print('You hold up the branch and the man falls silent. Somehow, without words, the two of you know what the other thinks and believes and can communicate perfectly.')
+                                elif hasBranch == False:
+                                    print('As you lack a means to communicate with the man, you must depart lest you incur his ire.')
                 elif restRoll <= 10 and restRoll < 20:
                     print('You awaken to a rustling in the bushes. Something is observing you.')
                 else:
